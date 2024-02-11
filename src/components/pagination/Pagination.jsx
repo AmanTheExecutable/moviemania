@@ -11,19 +11,14 @@ function Pagination({ page, setPage, totalPages }) {
 		const maxButtonsToShow = 10;
 		const middleButton = Math.ceil(maxButtonsToShow / 2);
 
-		let startButton = 1;
-		let endButton = totalPages;
+		let startButton = Math.max(
+			1,
+			Math.min(page - middleButton + 1, totalPages - maxButtonsToShow + 1)
+		);
+		let endButton = Math.min(startButton + maxButtonsToShow - 1, totalPages);
 
-		if (totalPages > maxButtonsToShow) {
-			if (page > middleButton) {
-				startButton = Math.min(
-					page - middleButton + 1,
-					totalPages - maxButtonsToShow + 1
-				);
-				endButton = Math.min(page + middleButton - 1, totalPages);
-			} else {
-				endButton = maxButtonsToShow;
-			}
+		if (endButton - startButton + 1 < maxButtonsToShow) {
+			startButton = Math.max(1, endButton - maxButtonsToShow + 1);
 		}
 
 		for (let i = startButton; i <= endButton; i++) {
@@ -43,13 +38,18 @@ function Pagination({ page, setPage, totalPages }) {
 
 	return (
 		<>
-			<button onClick={() => handlePageChange(page - 1)} disabled={page === 1}>
+			<button
+				onClick={() => handlePageChange(page - 1)}
+				disabled={page === 1}
+				id="Previous"
+			>
 				Previous
 			</button>
 			{generatePaginationButtons()}
 			<button
 				onClick={() => handlePageChange(page + 1)}
 				disabled={page === totalPages}
+				id="Next"
 			>
 				Next
 			</button>

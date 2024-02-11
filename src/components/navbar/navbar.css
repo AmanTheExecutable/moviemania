@@ -33,6 +33,11 @@ a {
 	text-decoration: none;
 }
 
+a.active > span {
+	transform: scale(1.2);
+	color: red;
+}
+
 a > span {
 	margin: 0 30px;
 	font-size: 1.3rem;
@@ -74,6 +79,7 @@ a > span:hover::before {
 	font-weight: bolder;
 	font-size: 1rem;
 	margin-right: 10px;
+	box-shadow: 0 0 5px 0 #ccc;
 	transition: border-color 0.3s ease-in-out;
 }
 
