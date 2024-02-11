@@ -1,25 +1,30 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import "./movie.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLink, faStar } from "@fortawesome/free-solid-svg-icons";
 const MoviePage = () => {
 	const { id } = useParams();
 	const [movie, setMovie] = useState({});
+	const [videos, setVideos] = useState([]);
 	useEffect(() => {
 		fetch(
-			`https://api.themoviedb.org/3/movie/${id}?api_key=4e44d9029b1270a757cddc766a1bcb63&language=en-US`
+			`https://api.themoviedb.org/3/movie/${id}?api_key=c8a65028465c18a0af0841ac79b572fd&language=en-US`
 		)
 			.then(response => response.json())
 			.then(data => setMovie(data));
 	}, []);
-
+	console.log(videos);
 	return (
 		<div className="movie">
 			<div className="movie__intro">
 				<img
 					className="movie__backdrop"
-					src={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+					src={
+						movie.backdrop_path
+							? `https://image.tmdb.org/t/p/original/${movie.backdrop_path}`
+							: "https://t4.ftcdn.net/jpg/01/16/88/37/360_F_116883786_wuckft1sNw1ouQfJ6FuquZnxea3qBlxy.jpg"
+					}
 					alt=""
 				/>
 			</div>
@@ -94,11 +99,21 @@ const MoviePage = () => {
 									</p>
 								</a>
 							)}
+
+							<Link
+								to={`/movies/${id}/videos`}
+								style={{ textDecoration: "none" }}
+							>
+								<p>
+									<span className="movie__videoButton movie__Button">
+										Videos <FontAwesomeIcon icon={faLink} />
+									</span>
+								</p>
+							</Link>
 						</div>
 					</div>
 				</div>
 			</div>
-			{/* {`https://image.tmdb.org/t/p/original/${company.logo_path}`} */}
 			<div className="movie__production">
 				<div className="movie__heading">Production Companies</div>
 				<div className="companies">

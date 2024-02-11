@@ -9,6 +9,7 @@ import Home from "./pages/home/home";
 import SearchList from "./components/SearchList/search-list";
 import TvList from "./components/TvList/tv-list";
 import Tv from "./pages/tv/tv";
+import Videos from "./pages/videos/videos";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -21,6 +22,7 @@ root.render(
 				<Route path="movie/:id" element={<Movie />} />
 				<Route path="movies/:type" element={<MovieList />} />
 				<Route path="movies/search/:query" element={<SearchList />} />
+				<Route path="movies/:id/videos" element={<Videos />} />
 				<Route path="tv/" element={<TvList />} />
 				<Route path="tv/:id" element={<Tv />} />
 			</Routes>
