@@ -6,11 +6,14 @@
 	height: 75px;
 }
 
-.headerLeft,
+.headerLeft {
+	display: flex;
+	align-items: center;
+}
 .headerRight {
 	display: flex;
 	align-items: center;
-	gap: 10px;
+	justify-content: center;
 }
 
 #name {
@@ -110,5 +113,5 @@ a > span:hover::before {
 .headerRight a:hover {
 	animation: pulse 0.5s ease infinite alternate;
 	background: #000;
-	color: red;
+	color: white;
 }

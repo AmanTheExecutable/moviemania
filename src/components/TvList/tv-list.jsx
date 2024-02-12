@@ -22,6 +22,7 @@ const TvList = () => {
 				setTvList(data.results);
 			});
 	};
+	console.log(tvList);
 	return (
 		<div className="movie__list">
 			{<h2 className="list__title">TV Shows</h2>}

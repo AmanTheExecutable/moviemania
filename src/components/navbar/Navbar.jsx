@@ -31,6 +31,9 @@ const Navbar = () => {
 				<NavLink to={"/tv"} activeClassName="active">
 					<span>TV Shows</span>{" "}
 				</NavLink>
+				<NavLink to={"/fav"} activeClassName="active">
+					<span>Favourites</span>
+				</NavLink>
 			</div>
 			<div className="headerRight">
 				<input
@@ -45,7 +48,7 @@ const Navbar = () => {
 					activeClassName="active"
 					onClick={() => setQuery("")}
 				>
-					Click here
+					Search
 				</NavLink>
 			</div>
 		</div>

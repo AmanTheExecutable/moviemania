@@ -10,6 +10,9 @@ import SearchList from "./components/SearchList/search-list";
 import TvList from "./components/TvList/tv-list";
 import Tv from "./pages/tv/tv";
 import Videos from "./pages/videos/videos";
+import Favourites from "./pages/favourites/favourites";
+import FavouriteMovies from "./pages/favourites/favouriteMovies";
+import FavouriteTV from "./pages/favourites/favouriteTV";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -23,6 +26,10 @@ root.render(
 				<Route path="movies/:type" element={<MovieList />} />
 				<Route path="movies/search/:query" element={<SearchList />} />
 				<Route path="movies/:id/videos" element={<Videos />} />
+				<Route path="fav" element={<Favourites />} />
+				<Route path="fav/favourite/movies" element={<FavouriteMovies />} />
+				<Route path="fav/favourite/tv" element={<FavouriteTV />} />
+
 				<Route path="tv/" element={<TvList />} />
 				<Route path="tv/:id" element={<Tv />} />
 			</Routes>

@@ -30,11 +30,29 @@
 	width: 75%;
 	display: flex;
 	position: relative;
-	bottom: 225px;
+	bottom: 242px;
 }
 
 .movie__detailLeft {
 	margin-right: 30px;
+}
+
+.movie__posterBox {
+	display: flex;
+	flex-direction: column;
+}
+
+.movie__posterBox button {
+	font-weight: 900;
+	margin-top: 20px;
+	border-radius: 10px;
+	height: 30px;
+	background-color: pink;
+	transition: all 0.3s ease;
+}
+
+.movie__posterBox button:hover {
+	box-shadow: 0 0 10px 5px pink;
 }
 
 .movie__poster {

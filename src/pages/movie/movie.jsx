@@ -6,7 +6,26 @@ import { faLink, faStar } from "@fortawesome/free-solid-svg-icons";
 const MoviePage = () => {
 	const { id } = useParams();
 	const [movie, setMovie] = useState({});
-	const [videos, setVideos] = useState([]);
+	const [favouriteMovies, setFavouriteMovies] = useState([]);
+	const isFavourite = favouriteMovies.includes(id);
+	useEffect(() => {
+		const storedFavouriteMovies =
+			JSON.parse(localStorage.getItem("favouriteMovies")) || [];
+		setFavouriteMovies(storedFavouriteMovies);
+	}, []);
+
+	useEffect(() => {
+		localStorage.setItem("favouriteMovies", JSON.stringify(favouriteMovies));
+	}, [favouriteMovies]);
+
+	const handleClick = () => {
+		if (isFavourite) {
+			setFavouriteMovies(favouriteMovies.filter(movieId => movieId !== id));
+		} else {
+			setFavouriteMovies([...favouriteMovies, id]);
+		}
+	};
+
 	useEffect(() => {
 		fetch(
 			`https://api.themoviedb.org/3/movie/${id}?api_key=c8a65028465c18a0af0841ac79b572fd&language=en-US`
@@ -14,7 +33,7 @@ const MoviePage = () => {
 			.then(response => response.json())
 			.then(data => setMovie(data));
 	}, []);
-	console.log(videos);
+
 	return (
 		<div className="movie">
 			<div className="movie__intro">
@@ -36,6 +55,9 @@ const MoviePage = () => {
 							src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
 							alt=""
 						/>
+						<button onClick={handleClick}>
+							{!isFavourite ? "Add to Favourites" : "Remove from Favourites"}
+						</button>
 					</div>
 				</div>
 				<div className="movie__detailRight">
