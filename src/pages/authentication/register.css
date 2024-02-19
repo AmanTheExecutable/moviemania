@@ -1,0 +1,87 @@
+.register-form {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #f9f9f9;
+	margin-top: 180px;
+	padding: 20px;
+	box-shadow: 0 0 10px rgb(255, 255, 255);
+}
+
+.register-title > h3 {
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+.input-container {
+	margin-bottom: 15px;
+}
+
+.input-label {
+	display: block;
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 14px;
+	text-align: left;
+}
+
+.input-field {
+	width: 100%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-sizing: border-box;
+	transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+	border-color: #007bff;
+}
+
+.error-message {
+	color: #ff0000;
+	font-weight: bold;
+	margin-top: 16px;
+}
+
+.submit-button {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+.submit-button:disabled {
+	background-color: #ccc;
+	cursor: not-allowed;
+}
+
+.submit-button:hover {
+	background-color: #0056b3;
+}
+
+.signin-link {
+	margin-top: 10px;
+	font-size: 14px;
+	text-align: center;
+	font-size: 17px;
+}
+
+.signin-link a {
+	color: #000000;
+	text-decoration: none;
+	font-weight: bold;
+	display: inline;
+}
+
+.signin-link a:hover {
+	text-decoration: underline;
+}

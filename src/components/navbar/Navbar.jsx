@@ -1,14 +1,26 @@
 import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../contexts/authContext";
+import { doSignOut } from "../../firebase/auth";
 import React from "react";
 import "./navbar.css";
 
 const Navbar = () => {
 	const [query, setQuery] = React.useState("");
+	const navigate = useNavigate();
+	const handleLogout = async () => {
+		try {
+			await doSignOut();
+			navigate("/", { replace: true });
+		} catch (error) {
+			console.error("Error logging out:", error);
+		}
+	};
 
 	return (
 		<div className="header">
 			<div className="headerLeft">
-				<NavLink exact to={"/"} activeClassName="active">
+				<NavLink exact to={"/home"} activeClassName="active">
 					<img
 						className="header__icon"
 						src="https://ik.imagekit.io/xcuqahb2st38/rand/logo.png?updatedAt=1706619838623"
@@ -49,6 +61,9 @@ const Navbar = () => {
 					onClick={() => setQuery("")}
 				>
 					Search
+				</NavLink>
+				<NavLink className="logout" onClick={handleLogout}>
+					Logout
 				</NavLink>
 			</div>
 		</div>
