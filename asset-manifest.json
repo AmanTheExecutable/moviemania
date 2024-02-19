@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/moviemania/static/css/main.5adbc9d5.css",
-    "main.js": "/moviemania/static/js/main.c0b1f07b.js",
+    "main.js": "/moviemania/static/js/main.7495f69e.js",
     "static/media/googleLogo.png": "/moviemania/static/media/googleLogo.c5dea6c44d36b8594480.png",
     "index.html": "/moviemania/index.html",
     "main.5adbc9d5.css.map": "/moviemania/static/css/main.5adbc9d5.css.map",
-    "main.c0b1f07b.js.map": "/moviemania/static/js/main.c0b1f07b.js.map"
+    "main.7495f69e.js.map": "/moviemania/static/js/main.7495f69e.js.map"
   },
   "entrypoints": [
     "static/css/main.5adbc9d5.css",
-    "static/js/main.c0b1f07b.js"
+    "static/js/main.7495f69e.js"
   ]
 }
