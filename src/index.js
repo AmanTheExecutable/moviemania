@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { HashRouter, Route, Routes, useLocation } from "react-router-dom";
 import Movie from "./pages/movie/movie";
 import MovieList from "./components/MovieList/movie-list";
 import Navbar from "./components/navbar/Navbar";
@@ -45,7 +45,7 @@ const App = () => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-	<BrowserRouter>
+	<HashRouter>
 		<App />
-	</BrowserRouter>
+	</HashRouter>
 );
