@@ -71,7 +71,7 @@ a > span:hover::before {
 }
 
 .header__icon {
-	width: 50px;
+	width: 30px;
 	cursor: pointer;
 }
 

@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import navLogo from "../../assets/navLogo.png";
 import { useAuth } from "../../contexts/authContext";
 import { doSignOut } from "../../firebase/auth";
 import React from "react";
@@ -21,11 +22,7 @@ const Navbar = () => {
 		<div className="header">
 			<div className="headerLeft">
 				<NavLink exact to={"/home"} activeClassName="active">
-					<img
-						className="header__icon"
-						src="https://ik.imagekit.io/xcuqahb2st38/rand/logo.png?updatedAt=1706619838623"
-						alt=""
-					/>
+					<img className="header__icon" src={navLogo} alt="" />
 					<h1 id="name">MovieMania</h1>
 				</NavLink>
 				<NavLink to={"/movies/popular"} activeClassName="active">
